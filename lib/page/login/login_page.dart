@@ -43,20 +43,29 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(Icons.android,
-                  size: 100, color: Color.fromRGBO(65, 75, 25, 1)),
-              const SizedBox(height: 50),
+              Container(
+                margin: EdgeInsets.only(bottom: 10),
+                height: 300,
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                        image: AssetImage('assets/images/gagarin.jpg')
+                    )
+                ),
+              ),
+              const SizedBox(height: 30),
               Padding(
                 padding:  const EdgeInsets.symmetric(horizontal: 25.0),
               child:
-              Text('Crosmos welcomes',
+              Text('crosmonaut welcome!',
                   style: GoogleFonts.bebasNeue(
-                      fontSize: 45, color: Color.fromRGBO(65, 75, 25, 1)))
+                      fontSize: 45, color: Color.fromRGBO(67,80,120, 1)))
               ),
               const SizedBox(height: 10),
               const Text(
@@ -64,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
-                    color: Color.fromRGBO(78, 89, 36, 1)),
+                    color: Color.fromRGBO(67,80,120, 1)),
               ),
               const SizedBox(height: 60),
               //EMAIL
@@ -79,12 +88,12 @@ class _LoginPageState extends State<LoginPage> {
                           borderRadius: BorderRadius.circular(12)),
                       focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                              color: Color.fromRGBO(189, 218, 87, 1)),
+                              color: Color.fromRGBO(111,42,131, 1)),
                           borderRadius: BorderRadius.circular(12)),
                       hintText: 'Email',
                       hintStyle: GoogleFonts.abel(
-                          color: Color.fromRGBO(245, 245, 245, 1)),
-                      fillColor: Color.fromRGBO(78, 89, 36, 0.2),
+                          color: Colors.white),
+                      fillColor: Color.fromRGBO(67,80,159, 0.2),
                       filled: true),
                 ),
               ),
@@ -102,12 +111,12 @@ class _LoginPageState extends State<LoginPage> {
                           borderRadius: BorderRadius.circular(12)),
                       focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                              color: Color.fromRGBO(189, 218, 87, 1)),
+                              color: Color.fromRGBO(111,42,131, 1)),
                           borderRadius: BorderRadius.circular(12)),
                       hintText: 'Password',
                       hintStyle: GoogleFonts.abel(
-                          color: Color.fromRGBO(245, 245, 245, 1)),
-                      fillColor: Color.fromRGBO(78, 89, 36, 0.2),
+                          color: Colors.white),
+                      fillColor: Color.fromRGBO(67,80,159, 0.2),
                       filled: true),
                 ),
               ),
@@ -121,12 +130,12 @@ class _LoginPageState extends State<LoginPage> {
                       child: Container(
                           padding: const EdgeInsets.all(20),
                           decoration: BoxDecoration(
-                              color: const Color.fromRGBO(189, 218, 87, 1),
+                              gradient: LinearGradient( colors: [Color.fromRGBO(111,42,131, 1), Color.fromRGBO(67,80,159, 1) ]),
                               borderRadius: BorderRadius.circular(12)),
                           child: const Center(
                               child: Text('Sing In',
                                   style: TextStyle(
-                                    color: Color.fromRGBO(245, 245, 245, 1),
+                                    color: Colors.white,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18,
                                   )))))),
@@ -138,11 +147,11 @@ class _LoginPageState extends State<LoginPage> {
                   Text('Not a member?',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: Color.fromRGBO(70, 80, 30, 1))),
+                          color: Color.fromRGBO(67,80,120, 1))),
                   SizedBox(width: 5),
                   Text('Register now',
                       style: TextStyle(
-                          color: Colors.cyan,
+                          color: Color.fromRGBO(67,80,250, 1),
                           fontWeight: FontWeight.bold)),
                 ],
               )

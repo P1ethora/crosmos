@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(189, 218, 87, 1),
+        backgroundColor: Color.fromRGBO(67,80,159, 1),
         title: Text("Main"),
         actions: [
           InkWell(
@@ -40,12 +40,17 @@ class _HomePageState extends State<HomePage> {
             ? Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  ElevatedButton.icon(
-                      style: ElevatedButton.styleFrom(
-                          primary: Colors.amber, onPrimary: Colors.black),
-                      onPressed: scan,
-                      icon: Icon(Icons.camera_alt_outlined),
-                      label: Text('Start Scan')),
+
+                  Container(
+                    height: 44.0,
+                    decoration: BoxDecoration(gradient: LinearGradient( colors: [Color.fromRGBO(111,42,131, 1), Color.fromRGBO(67,80,159, 1) ])),
+                    child: ElevatedButton.icon(
+                        onPressed: scan,
+                        style: ElevatedButton.styleFrom(primary: Colors.transparent, shadowColor: Colors.transparent),
+                        icon: Icon(Icons.camera_alt_outlined),
+                        label: Text('Start Scan')
+                    ),
+                  ),
                   SizedBox(height: 20),
                   Text(
                       scanResult == null
@@ -77,6 +82,8 @@ class _HomePageState extends State<HomePage> {
         iconSize: 40,
         currentIndex: currentIndex,
         onTap: (index) => setState(() => currentIndex = index),
+        unselectedItemColor: Color.fromRGBO(67,80,159, 1),
+        selectedItemColor: Color.fromRGBO(67,80,250, 1),
         items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.qr_code_2_outlined), label: 'QR'),

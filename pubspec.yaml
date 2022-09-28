@@ -66,6 +66,7 @@ flutter:
     - assets/images/profile.png
     - assets/images/Kharitonov.png
     - assets/images/Kharitonov2.png
+    - assets/images/gagarin.jpg
     - assets/gif/nfc.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
