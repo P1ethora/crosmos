@@ -51,31 +51,14 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Container(
                 margin: EdgeInsets.only(bottom: 10),
-                height: 300,
+                height: 220,
                 decoration: BoxDecoration(
-                    shape: BoxShape.circle,
                     image: DecorationImage(
-                        image: AssetImage('assets/images/gagarin.jpg')
+                        image: AssetImage('assets/images/purple234.png')
                     )
                 ),
               ),
-              const SizedBox(height: 30),
-              Padding(
-                padding:  const EdgeInsets.symmetric(horizontal: 25.0),
-              child:
-              Text('crosmonaut welcome!',
-                  style: GoogleFonts.bebasNeue(
-                      fontSize: 45, color: Color.fromRGBO(67,80,120, 1)))
-              ),
-              const SizedBox(height: 10),
-              const Text(
-                'You\'ve been missed!',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                    color: Color.fromRGBO(67,80,120, 1)),
-              ),
-              const SizedBox(height: 60),
+              const SizedBox(height: 40),
               //EMAIL
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),

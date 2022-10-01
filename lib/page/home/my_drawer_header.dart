@@ -23,7 +23,7 @@ return Container(
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           image: DecorationImage(
-            image: AssetImage('assets/images/Kharitonov2.png')
+            image: AssetImage('assets/images/four(1).png')
           )
         ),
       ),

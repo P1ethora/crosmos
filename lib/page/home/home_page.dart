@@ -2,7 +2,7 @@ import 'package:crosmos/page/login/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
-// import 'package:flutter_nfc_reader/flutter_nfc_reader.dart';
+import 'package:flutter_nfc_reader/flutter_nfc_reader.dart';
 
 import 'my_drawer_header.dart';
 
@@ -17,6 +17,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) => nfc(currentIndex));
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
@@ -45,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                     height: 44.0,
                     decoration: BoxDecoration(gradient: LinearGradient( colors: [Color.fromRGBO(111,42,131, 1), Color.fromRGBO(67,80,159, 1) ])),
                     child: ElevatedButton.icon(
-                        onPressed: scan,
+                        onPressed: scanQR,
                         style: ElevatedButton.styleFrom(primary: Colors.transparent, shadowColor: Colors.transparent),
                         icon: Icon(Icons.camera_alt_outlined),
                         label: Text('Start Scan')
@@ -64,9 +65,8 @@ class _HomePageState extends State<HomePage> {
                 margin: EdgeInsets.only(bottom: 10),
                 height: 200,
                 decoration: BoxDecoration(
-                    shape: BoxShape.circle,
                     image: DecorationImage(
-                        image: AssetImage('assets/gif/nfc.gif'))),
+                        image: AssetImage('assets/gif/nfc_next.gif'))),
               )),
       ),
       drawer: Drawer(
@@ -142,7 +142,7 @@ class _HomePageState extends State<HomePage> {
   //   }
   // }
 
-  Future scan() async {
+  Future scanQR() async {
     String result;
     try {
       result = await FlutterBarcodeScanner.scanBarcode(
@@ -153,6 +153,20 @@ class _HomePageState extends State<HomePage> {
     if (!mounted) return;
     setState(() => scanResult = result);
   }
+
+  Future nfc(currentIndex) async {
+    print(currentIndex);
+    if(currentIndex == 1) {
+      FlutterNfcReader.read().then((response) {
+        setState(() => scanResult = response.content);
+        print(response.content);
+      });
+    } else {
+      FlutterNfcReader.stop().then((response) {
+      });
+    }
+  }
+
 }
 
 enum DrawerSections {

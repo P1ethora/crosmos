@@ -29,9 +29,12 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-#  flutter_nfc_reader: ^0.1.0
   flutter:
     sdk: flutter
+  flutter_nfc_reader:
+    git:
+      url: https://github.com/matteocrippa/flutter-nfc-reader.git
+      ref: master
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -67,7 +70,11 @@ flutter:
     - assets/images/Kharitonov.png
     - assets/images/Kharitonov2.png
     - assets/images/gagarin.jpg
+    - assets/images/purple1.png
+    - assets/images/purple234.png
+    - assets/images/four(1).png
     - assets/gif/nfc.gif
+    - assets/gif/nfc_next.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
