@@ -1,6 +1,6 @@
 import 'package:crosmos/page/login/login_page.dart';
 import 'package:flutter/material.dart';
-
+import 'package:crosmos/page/menu/menu.dart';
 import 'page/home/home_page.dart';
 
 void main() {
@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => LoginPage(),
         '/home': (context) => HomePage(),
         '/login': (context) => LoginPage(),
+        '/menu' : (context) => MenuPage(),
       },
 
     );

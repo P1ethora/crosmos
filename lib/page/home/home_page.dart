@@ -143,15 +143,17 @@ class _HomePageState extends State<HomePage> {
   // }
 
   Future scanQR() async {
-    String result;
-    try {
-      result = await FlutterBarcodeScanner.scanBarcode(
-          "#000000", "Cancel", true, ScanMode.QR);
-    } on PlatformException {
-      result = 'Failed to get platform version.';
-    }
-    if (!mounted) return;
-    setState(() => scanResult = result);
+    Navigator.pushNamedAndRemoveUntil(
+        context, '/menu', (route) => false);
+    // String result;
+    // try {
+    //   result = await FlutterBarcodeScanner.scanBarcode(
+    //       "#000000", "Cancel", true, ScanMode.QR);
+    // } on PlatformException {
+    //   result = 'Failed to get platform version.';
+    // }
+    // if (!mounted) return;
+    // setState(() => scanResult = result);
   }
 
   Future nfc(currentIndex) async {
