@@ -1,4 +1,5 @@
 import 'package:crosmos/page/login/login_page.dart';
+import 'package:crosmos/page/menu/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
@@ -143,8 +144,14 @@ class _HomePageState extends State<HomePage> {
   // }
 
   Future scanQR() async {
-    Navigator.pushNamedAndRemoveUntil(
-        context, '/menu', (route) => false);
+
+    Navigator.push(
+        context,
+        new MaterialPageRoute(
+        builder: (context) => new MenuPage(),
+     )
+    );
+
     // String result;
     // try {
     //   result = await FlutterBarcodeScanner.scanBarcode(
