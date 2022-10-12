@@ -6,14 +6,13 @@ import 'package:flutter/material.dart';
 
 import '../../components/restaruant_appbar.dart';
 
-class RestaurantPage extends StatefulWidget {
-  const RestaurantPage({Key? key}) : super(key: key);
+class MenuPage extends StatefulWidget {
 
   @override
-  State<RestaurantPage> createState() => _RestaurantPageState();
+  State<MenuPage> createState() => _MenuPageState();
 }
 
-class _RestaurantPageState extends State<RestaurantPage> {
+class _MenuPageState extends State<MenuPage> {
 
   final scrollController = ScrollController();
 

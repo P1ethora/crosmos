@@ -1,5 +1,5 @@
 import 'package:crosmos/page/login/login_page.dart';
-import 'package:crosmos/page/menu/menu.dart';
+import 'package:crosmos/page/point_trade/point_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
@@ -145,13 +145,6 @@ class _HomePageState extends State<HomePage> {
 
   Future scanQR() async {
 
-    Navigator.push(
-        context,
-        new MaterialPageRoute(
-        builder: (context) => new MenuPage(),
-     )
-    );
-
     // String result;
     // try {
     //   result = await FlutterBarcodeScanner.scanBarcode(
@@ -161,19 +154,26 @@ class _HomePageState extends State<HomePage> {
     // }
     // if (!mounted) return;
     // setState(() => scanResult = result);
+
+    //бэк запрос с result и id пользователя
+    //если приходит хороший ответ переводим на страницу точки
+
+    // Navigator.of(context).pushNamed('/point-trade');
+    Navigator.pushNamedAndRemoveUntil(
+        context, '/point-trade', (route) => false);
   }
 
+  //в nfc все тоже самое что и в scanQr, также нужно обрезать ответ nfc, в начало крепяться левый символы
   Future nfc(currentIndex) async {
-    print(currentIndex);
-    if(currentIndex == 1) {
-      FlutterNfcReader.read().then((response) {
-        setState(() => scanResult = response.content);
-        print(response.content);
-      });
-    } else {
-      FlutterNfcReader.stop().then((response) {
-      });
-    }
+    // if(currentIndex == 1) {
+    //   FlutterNfcReader.read().then((response) {
+    //     setState(() => scanResult = response.content);
+    //     print(response.content);
+    //   });
+    // } else {
+    //   FlutterNfcReader.stop().then((response) {
+    //   });
+    // }
   }
 
 }

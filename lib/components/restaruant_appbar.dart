@@ -11,16 +11,12 @@ class RestaruantAppBar extends StatefulWidget {
 }
 
 class _RestaruantAppBarState extends State<RestaruantAppBar> {
-  String? scanResult;
-  int currentIndex = 0;
-
 // }
 // class RestaruantAppBar extends StatelessWidget{
 //   const RestaruantAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     // return Scaffold(
     //   resizeToAvoidBottomInset: false,
     //   appBar: AppBar(
@@ -46,6 +42,14 @@ class _RestaruantAppBarState extends State<RestaruantAppBar> {
       backgroundColor: Colors.white,
       elevation: 0,
       pinned: true,
+      automaticallyImplyLeading: false,
+      leading: IconButton(
+        icon: Icon(Icons.arrow_back_rounded),
+        onPressed: () {
+          Navigator.pop(context); //ВОЗВРАТ НА ТОЧКУ ТОРГОВЛИ
+        },
+        color: Colors.white,
+      ),
       flexibleSpace: FlexibleSpaceBar(
         background: Image.network(
           "assets/images/Header-image.png",
@@ -56,24 +60,16 @@ class _RestaruantAppBarState extends State<RestaruantAppBar> {
         Container(
           width: 55,
           decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(100),
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(100),
           ),
           child: IconButton(
-            icon: Icon(Icons.arrow_back_rounded),
-            onPressed: backButton,
+            icon: Icon(Icons.shopping_cart),
+            onPressed: () => Navigator.pushNamed(context, "/cart"),
             color: Colors.black,
           ),
         ),
-        IconButton(
-          icon: Icon(Icons.shopping_cart),
-          onPressed: backButton,
-          color: Colors.black,
-        ),
-
       ],
-
-
 
       // leading: Padding(
       //   padding: const EdgeInsets.only(left: 16),
@@ -101,7 +97,6 @@ class _RestaruantAppBarState extends State<RestaruantAppBar> {
   }
 
   Future backButton() async {
-
     Navigator.push(
       context,
       new MaterialPageRoute(
@@ -109,11 +104,9 @@ class _RestaruantAppBarState extends State<RestaruantAppBar> {
       ),
     );
 
-  //   Navigator.pushNamed(context, "/login");
+    //   Navigator.pushNamed(context, "/login");
 
-  //   Navigator.pushNamedAndRemoveUntil(
-  //       context, '/home', (route) => false);
+    //   Navigator.pushNamedAndRemoveUntil(
+    //       context, '/home', (route) => false);
   }
-
 }
-
