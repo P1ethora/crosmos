@@ -18,7 +18,7 @@ class _MenuPageState extends State<MenuPage> {
 
   int selectedCategoryIndex = 0;
 
-  double restaruantInfoHeight = 200
+  double restaruantInfoHeight = 55
   + 170
   -
   kToolbarHeight;
@@ -100,9 +100,7 @@ class _MenuPageState extends State<MenuPage> {
         controller: scrollController,
         slivers: [
           RestaruantAppBar(),
-          SliverToBoxAdapter(
-            child: RestaurantInfo(),
-          ),
+          SliverToBoxAdapter(),
           SliverPersistentHeader(
             delegate: ResuaranCategories(
               onChanged: scrollToCategory,

@@ -77,21 +77,26 @@ class MenuCard extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    // const Text("\$\$"),
-                    // const Padding(
-                    //   padding: EdgeInsets.symmetric(horizontal: 8),
-                    //   child: CircleAvatar(
-                    //     radius: 2,
-                    //     backgroundColor: Colors.black38,
-                    //   ),
-                    // ),
-                    // const Text("Chinese"),
-                    // const Spacer(),
                     Text(
                       "\$ $price",
                       style: const TextStyle(
                         fontWeight: FontWeight.w500,
                         color: Color(0xFF22A45D),
+                      ),
+                    ),
+                    const Spacer(),
+                    OutlinedButton(
+                      onPressed: () {},
+                      style: OutlinedButton.styleFrom(
+                        fixedSize: const Size(90, 40),
+                        side: const BorderSide(color: Color(0xFF22A45D)),
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(8)),
+                        ),
+                      ),
+                      child: Text(
+                        "Take away".toUpperCase(),
+                        style: const TextStyle(fontSize: 10),
                       ),
                     )
                   ],
