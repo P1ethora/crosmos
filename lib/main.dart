@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => LoginPage(),
         '/menu' : (context) => MenuPage(),
         '/cart' : (context) => CartPage(),
-        '/point-trade':(context) => PointTradePage()
+        '/point-trade':(context) => PointTradePage(),
       },
 
     );

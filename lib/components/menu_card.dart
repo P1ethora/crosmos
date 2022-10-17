@@ -1,4 +1,6 @@
+import 'package:crosmos/page/Inf_page/ItemInfo.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class MenuCategoryItem extends StatelessWidget {
   const MenuCategoryItem({
@@ -47,9 +49,24 @@ class MenuCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SizedBox(
-          width: 100,
-          height: 100,
+        ElevatedButton(
+          onPressed: () => {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ItemInfoPage(
+                    title: title,
+                    image: image,
+                    price: price
+                ),
+              )
+            )
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.white,
+            fixedSize: const Size(100, 100),
+            padding: const EdgeInsets.all(0)
+          ),
           child: Image.network(image),
         ),
         const SizedBox(width: 16),
