@@ -25,11 +25,27 @@ class ItemInfoPage extends StatelessWidget {
           // SizedBox(height: 20),
             Container(
               height: 400,
-              child: Image.network(image, fit: BoxFit.fill,),
+              child: Image.asset(image, fit: BoxFit.fill,),
             ),
             SizedBox(height: 20),
             Text("\$ $price",
-                style: TextStyle(fontSize: 18))
+                style: TextStyle(fontSize: 18)),
+            OutlinedButton(
+              onPressed: () => {
+                // textHolder[0] = 'dsfdgssad',
+              },
+              style: OutlinedButton.styleFrom(
+                fixedSize: const Size(120, 50),
+                side: const BorderSide(color: Color(0xFF22A45D)),
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                ),
+              ),
+              child: Text(
+                'Take away'.toUpperCase(),
+                style: const TextStyle(fontSize: 14),
+              ),
+            )
           ],
         )
       ),

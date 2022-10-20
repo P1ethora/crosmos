@@ -102,20 +102,7 @@ class MenuCard extends StatelessWidget {
                       ),
                     ),
                     const Spacer(),
-                    OutlinedButton(
-                      onPressed: () {},
-                      style: OutlinedButton.styleFrom(
-                        fixedSize: const Size(90, 40),
-                        side: const BorderSide(color: Color(0xFF22A45D)),
-                        shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(8)),
-                        ),
-                      ),
-                      child: Text(
-                        "Take away".toUpperCase(),
-                        style: const TextStyle(fontSize: 10),
-                      ),
-                    )
+                    ButtonWidget(),
                   ],
                 )
               ],
@@ -123,6 +110,64 @@ class MenuCard extends StatelessWidget {
           ),
         )
       ],
+    );
+  }
+}
+
+
+class ButtonWidget extends StatefulWidget {
+  const ButtonWidget({Key? key}) : super(key: key);
+
+  @override
+  _ButtonWidgetState createState() => _ButtonWidgetState();
+}
+
+class _ButtonWidgetState extends State<ButtonWidget> {
+  late Color _buttonColor;
+  var textColor;
+  var btnText;
+
+  @override
+  void initState() {
+    //Начальное значение цвета кнопки
+    _buttonColor = Colors.white;
+    textColor = 0xffffffff;
+    btnText = 'Take';
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        //Здесь меняем переменную цвета кнопки внутри state
+        setState(() {
+          if (_buttonColor == Colors.white) {
+            _buttonColor = Colors.green;
+            btnText = 'Taken';
+            textColor = 0xffffffff;
+          } else {
+            _buttonColor = Colors.white;
+            btnText = 'Take';
+            textColor = 0xFF000000;
+          }
+        });
+      },
+      style: ElevatedButton.styleFrom(
+        //Здесь указывается, что для цвета нужно взять переменную
+        primary: _buttonColor,
+        fixedSize: const Size(100, 40),
+        side: const BorderSide(color: Color(0xFF22A45D)),
+        shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(8))
+        )
+      ),
+      child: Text(
+        btnText,
+        style: const TextStyle(
+          color: Colors.black,
+        ),
+      ),
     );
   }
 }
