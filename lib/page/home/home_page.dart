@@ -1,5 +1,7 @@
+import 'package:crosmos/api/api_service.dart';
 import 'package:crosmos/page/login/login_page.dart';
 import 'package:crosmos/page/point_trade/point_page.dart';
+import 'package:crosmos/shared/user.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
@@ -18,6 +20,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    loadUser();
     WidgetsBinding.instance.addPostFrameCallback((_) => nfc(currentIndex));
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -143,6 +146,14 @@ class _HomePageState extends State<HomePage> {
   //   }
   // }
 
+  void loadUser() async {
+    if(!(await APIService.loadUserData())) {
+      print('BAD LOAD USER DATA');
+        Navigator.pushNamedAndRemoveUntil(
+            context, '/login', (route) => false);
+    }
+  }
+
   Future scanQR() async {
 
     // String result;
@@ -157,10 +168,10 @@ class _HomePageState extends State<HomePage> {
 
     //бэк запрос с result и id пользователя
     //если приходит хороший ответ переводим на страницу точки
+    String value = "{\"identifier\": \"1\",\"value\": \"TlXIjsswkrSFVHtC1eBRJg==\"}";
 
-    // Navigator.of(context).pushNamed('/point-trade');
-    Navigator.pushNamedAndRemoveUntil(
-        context, '/point-trade', (route) => false);
+    // APIService.takePlace(value);
+    Navigator.of(context).pushNamed('/point-trade');
   }
 
   //в nfc все тоже самое что и в scanQr, также нужно обрезать ответ nfc, в начало крепяться левый символы

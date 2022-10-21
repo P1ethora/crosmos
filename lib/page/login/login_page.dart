@@ -14,21 +14,19 @@ class _LoginPageState extends State<LoginPage> {
   final _passwordController = TextEditingController();
 
   Future signIn() async {
-    APIService api = APIService();
-    api
-        .login(LoginRequestModel(
+    APIService.login(LoginRequestModel(
             email: _emailController.text.trim(),
             password: _passwordController.text.trim()))
         .then((response) => {
-              // if (response == true)
-              //   {
+              if (response == true)
+                {
                   Navigator.pushNamedAndRemoveUntil(
                       context, '/home', (route) => false)
-                // }
-              // else
-              //   {
-              //     //wtf
-              //   }
+                }
+              else
+                {
+                  //wtf
+                }
             });
   }
 
@@ -41,6 +39,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    APIService.deleteToken();
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
@@ -51,12 +50,10 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Container(
                 margin: EdgeInsets.only(bottom: 10),
-                height: 220,
+                height: 180,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('assets/images/purple234.png')
-                    )
-                ),
+                        image: AssetImage('assets/images/purple1.png'))),
               ),
               const SizedBox(height: 40),
               //EMAIL
@@ -66,17 +63,15 @@ class _LoginPageState extends State<LoginPage> {
                   controller: _emailController,
                   decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Colors.white),
+                          borderSide: BorderSide(color: Colors.white),
                           borderRadius: BorderRadius.circular(12)),
                       focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                              color: Color.fromRGBO(111,42,131, 1)),
+                              color: Color.fromRGBO(111, 42, 131, 1)),
                           borderRadius: BorderRadius.circular(12)),
                       hintText: 'Email',
-                      hintStyle: GoogleFonts.abel(
-                          color: Colors.white),
-                      fillColor: Color.fromRGBO(67,80,159, 0.2),
+                      hintStyle: GoogleFonts.abel(color: Colors.white),
+                      fillColor: Color.fromRGBO(67, 80, 159, 0.2),
                       filled: true),
                 ),
               ),
@@ -89,17 +84,15 @@ class _LoginPageState extends State<LoginPage> {
                   obscureText: true,
                   decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Colors.white),
+                          borderSide: BorderSide(color: Colors.white),
                           borderRadius: BorderRadius.circular(12)),
                       focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                              color: Color.fromRGBO(111,42,131, 1)),
+                              color: Color.fromRGBO(111, 42, 131, 1)),
                           borderRadius: BorderRadius.circular(12)),
                       hintText: 'Password',
-                      hintStyle: GoogleFonts.abel(
-                          color: Colors.white),
-                      fillColor: Color.fromRGBO(67,80,159, 0.2),
+                      hintStyle: GoogleFonts.abel(color: Colors.white),
+                      fillColor: Color.fromRGBO(67, 80, 159, 0.2),
                       filled: true),
                 ),
               ),
@@ -113,29 +106,39 @@ class _LoginPageState extends State<LoginPage> {
                       child: Container(
                           padding: const EdgeInsets.all(20),
                           decoration: BoxDecoration(
-                              gradient: LinearGradient( colors: [Color.fromRGBO(111,42,131, 1), Color.fromRGBO(67,80,159, 1) ]),
-                              borderRadius: BorderRadius.circular(12)),
+                              gradient: LinearGradient(colors: [
+                                Color.fromRGBO(111, 42, 131, 1),
+                                Color.fromRGBO(67, 80, 159, 1)
+                              ]),
+                              borderRadius: BorderRadius.circular(12)
+                          ),
                           child: const Center(
                               child: Text('Sing In',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18,
-                                  )))))),
+                                  )))
+                      )
+                  )
+              ),
 
               const SizedBox(height: 25),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children:  [
                   Text('Not a member?',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: Color.fromRGBO(67,80,120, 1))),
+                          color: Color.fromRGBO(67, 80, 120, 1))),
                   SizedBox(width: 5),
-                  Text('Register now',
-                      style: TextStyle(
-                          color: Color.fromRGBO(67,80,250, 1),
-                          fontWeight: FontWeight.bold)),
+                  TextButton(onPressed: () => Navigator.pushNamed(context, '/registration'),
+                      child: Text('Register now',
+                          style: TextStyle(
+                              color: Color.fromRGBO(67, 80, 250, 1),
+                              fontWeight: FontWeight.bold))
+                  )
+
                 ],
               )
             ],

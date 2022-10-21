@@ -1,3 +1,4 @@
+import 'package:crosmos/shared/user.dart';
 import 'package:flutter/material.dart';
 
 class MyHeaderDrawer extends StatefulWidget {
@@ -23,12 +24,12 @@ return Container(
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           image: DecorationImage(
-            image: AssetImage('assets/images/four(1).png')
+            image: NetworkImage(User.imageUrl)
           )
         ),
       ),
-      Text("Борька Харитонов", style: TextStyle(color: Colors.white, fontSize: 20)),
-      Text("kharitonov@yandex.ru", style: TextStyle(color: Colors.grey[200], fontSize: 14))
+      Text("${User.firstName} ${User.lastName}", style: TextStyle(color: Colors.white, fontSize: 20)),
+      Text(User.email, style: TextStyle(color: Colors.grey[200], fontSize: 14))
 
     ]
   ),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 
+import '../../model/point/story_data.dart';
+
 class PointTradePage extends StatefulWidget {
   @override
   State<PointTradePage> createState() => _PointTradePageState();
@@ -25,13 +27,14 @@ class _PointTradePageState extends State<PointTradePage> {
   }
 
   Widget showList() {
-    return ListView.builder(
+    return Expanded(
+        child: ListView.builder(
       padding: EdgeInsets.all(10),
       itemCount: items.length,
       itemBuilder: (BuildContext context, int index) {
         return rowItem(context, index);
       },
-    );
+    ));
   }
 
   rowItem(context, index) {
@@ -86,52 +89,143 @@ class _PointTradePageState extends State<PointTradePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.of(context).pushNamed('/menu'), //ПЕРЕХОД В МЕНЮ
-        child: Text("Меню"),
-      ),
-      appBar: AppBar(
-        backgroundColor: Color.fromRGBO(67, 80, 159, 1),
-        title: Text("Goracio: 4"),
-        actions: [
-          InkWell(
-              child: Column(
+        resizeToAvoidBottomInset: false,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => Navigator.of(context).pushNamed('/menu'),
+          //ПЕРЕХОД В МЕНЮ
+          child: Text("Меню"),
+        ),
+        appBar: AppBar(
+          backgroundColor: Color.fromRGBO(67, 80, 159, 1),
+          title: Row(
             children: [
-              SizedBox(height: 10),
-              Container(
+              Icon(
+                Icons.balance_rounded,
+                size: 15,
+              ),
+              Text(' Goracio: 4')
+            ],
+          ),
+          automaticallyImplyLeading: false,
+          leading: IconButton(
+            //К СТРЕЛКЕ В СЛУЧАЕ ПОСТУПЛЕНИЯ ЗАКАЗА НА КУХНЮ КРЕПИТЬ $ (оплатить и выйти)
+            icon: Icon(Icons.arrow_back_rounded),
+            onPressed: () {
+              //ПРИ ПОПАДАНИИ ЗАКАЗА НА КУХНЮ ДОЛЖНО ПОЯВИТСЯ ОКНО ПРИ НАЖАТИИ ОБ ОПЛАТЕ
+              Navigator.pop(context); //ВОЗВРАТ НА ТОЧКУ ТОРГОВЛИ
+            },
+            color: Colors.white,
+          ),
+          actions: [
+            InkWell(
+                child: Container(
+              child: Container(
                 alignment: Alignment.center,
                 width: 120.0,
                 child: Text("сумма: \$100"),
               ),
-              SizedBox(height: 5),
-              Container(
-                alignment: Alignment.center,
-                width: 120.0,
-                child: Text("твоя: \$60"),
+            )),
+            InkWell(
+                //$ ДОЛЖЕН ПОЯВИТСЯ ТОЛЬКО ПРИ ПРИНЯТЫХ ЗАКАЗАХ КУХНЕЙ
+                child: Container(
+              alignment: Alignment.center,
+              width: 45.0,
+              child: IconButton(
+                icon: Icon(Icons.attach_money),
+                onPressed: () {
+                  //ОПЛАТА
+                },
+                color: Colors.white,
               ),
+            ))
+          ],
+        ),
+        body: Column(children: [
+          _Stories(),
+          showList(),
+        ]));
+  }
+}
+
+class _Stories extends StatelessWidget {
+  const _Stories({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Card(
+        elevation: 0,
+        child: SizedBox(
+          height: 100,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 1,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SizedBox(
+                        width: 50,
+                        child: _StoryCard(
+                          storyData: StoryData(
+                            name: 'Борька Харитонов',
+                            url: 'assets/images/profile.png',
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              )
             ],
-          )),
-          InkWell(
-              child: Container(
-            alignment: Alignment.center,
-            width: 90.0,
-            child: Text("оплатить"),
-          )),
-          InkWell(
-              child: Container(
-            alignment: Alignment.center,
-            width: 90.0,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _StoryCard extends StatelessWidget {
+  const _StoryCard({
+    Key? key,
+    required this.storyData,
+  }) : super(key: key);
+
+  final StoryData storyData;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      // mainAxisSize: MainAxisSize.min,
+      // mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          margin: EdgeInsets.only(bottom: 10),
+          height: 60,
+          decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              image: DecorationImage(image: AssetImage(storyData.url))),
+        ),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 2.0),
             child: Text(
-              "оплатить и выйти",
-              textAlign: TextAlign.center,
+              storyData.name,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(
+                color: Colors.black,
+                fontSize: 11,
+                letterSpacing: 0.3,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ))
-        ],
-      ),
-      body: Container(
-        child: showList(),
-      ),
+          ),
+        ),
+      ],
     );
   }
 }
