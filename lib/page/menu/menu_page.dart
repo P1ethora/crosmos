@@ -122,6 +122,11 @@ class _MenuPageState extends State<MenuPage> {
                           title: items[index].title,
                           image: items[index].image,
                           price: items[index].price,
+                          id: items[index].id,
+                          weight: items[index].weight,
+                          typeWeight: items[index].typeWeight,
+                          currency: items[index].currency,
+                          infoProduct: items[index].infoProduct,
                         )
                     ),
                   );

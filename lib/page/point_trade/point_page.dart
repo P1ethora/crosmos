@@ -103,7 +103,7 @@ class _PointTradePageState extends State<PointTradePage> {
                 Icons.balance_rounded,
                 size: 15,
               ),
-              Text(' Goracio: 4')
+              Text(' Goracio:4')
             ],
           ),
           automaticallyImplyLeading: false,

@@ -11,7 +11,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class APIService {
   static const storage = FlutterSecureStorage();
-  static const String HOST = 'https://hot-bars-love-151-249-171-32.loca.lt';
+  static const String HOST = 'https://early-doors-agree-151-249-171-32.loca.lt';
 
   static Future<String> getToken() async {
     var value = await storage.read(key: 'token');
