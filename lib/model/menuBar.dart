@@ -1,10 +1,17 @@
-// For demo
-
 class ElementMenu {
-  final String title, image;
-  final double price;
+  final String title, image, typeWeight, currency, infoProduct;
+  final double price, weight, id;
 
-  ElementMenu({required this.title, required this.image, required this.price});
+  ElementMenu({
+    required this.id,
+    required this.title,
+    required this.image,
+    required this.price,
+    required this.weight,
+    required this.typeWeight,
+    required this.currency,
+    required this.infoProduct,
+  });
 }
 
 class CategoryMenu {
@@ -16,137 +23,112 @@ class CategoryMenu {
 
 final List<CategoryMenu> demoCategoryMenus = [
   CategoryMenu(
-    category: "Most Popular",
+    category: "Snacks",
     items: [
       ElementMenu(
-        price: 7.4,
-        image: "cesar.jpg",
-        title: "Cookie Sandwich",
+          id: 0987654341,
+          currency: "USD",
+          price: 8,
+          image: "https://amusik.ru/files/a18/a1877d5a3a24b0cd5a29a39638af1c73.jpg",
+          title: "Cheese",
+          infoProduct: "Set of cheeses of different varieties",
+          weight: 300,
+          typeWeight: "gram"
       ),
       ElementMenu(
-        price: 9.0,
-        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
-        title: "Chow Fun",
+          id: 0987654342,
+          currency: "USD",
+          price: 1.5,
+          image: "https://kartinkin.net/uploads/posts/2022-03/thumbs/1647278102_26-kartinkin-net-p-sukhariki-kartinki-28.jpg",
+          title: "Crackers",
+          infoProduct: "Salted croutons from dark bread",
+          weight: 100,
+          typeWeight: "gram"
       ),
       ElementMenu(
-        price: 8.5,
-        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
-        title: "Dim SUm",
+          id: 0987654343,
+          currency: "USD",
+          price: 2,
+          image: "https://kvashenaya-kapusta.ru/wp-content/uploads/7/2/1/721b71f413e834cd9866b03b7d4c9527.jpeg",
+          title: "Chips",
+          infoProduct: "Potato chips with salt",
+          weight: 80,
+          typeWeight: "gram"
       ),
       ElementMenu(
-        price: 12.4,
-        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
-        title: "Cookie Sandwich",
+          id: 0987654344,
+          currency: "USD",
+          price: 3,
+          image: "https://womanadvice.ru/sites/default/files/39/2015-09-20_1149/mainimage200x200/grenki_s_chesnokom.jpg.crop_display.jpg",
+          title: "Crouton",
+          infoProduct: "Black bread garlic croutons",
+          weight: 80,
+          typeWeight: "gram"
       ),
     ],
   ),
   CategoryMenu(
-    category: "Beef & Lamb",
+    category: "Alcohol",
     items: [
       ElementMenu(
-        price: 7.4,
-        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
-        title: "Combo Burger",
+          id: 0987651111,
+          currency: "USD",
+          price: 3,
+          image: "https://static.winestreet.ru/off-line/article/1075/1.jpg",
+          title: "Ballantine's whiskey",
+          infoProduct: "Blended Scotch whiskey Ballantine's 12 Years Old is made from more than 40 selected varieties of grain and malt whiskey, the minimum aging period of which is 12 years.",
+          weight: 50,
+          typeWeight: "milliliter"
       ),
       ElementMenu(
-        price: 9.0,
-        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
-        title: "Combo Sandwich",
+          id: 0987654344,
+          currency: "USD",
+          price: 3,
+          image: "https://jamesonwhiskey.s3.eu-west-1.amazonaws.com/prod/basic_uploads/sir-trevor/5c6a7d1d9ee01.jpeg",
+          title: "Jameson whiskey",
+          infoProduct: "Jameson whiskey is the most famous Irish whiskey. The best grains are selected for it. It gets its trademark softness thanks to triple distillation and is aged in oak barrels for at least 4 years.",
+          weight: 50,
+          typeWeight: "milliliter"
       ),
       ElementMenu(
-        price: 8.5,
-        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
-        title: "Dim SUm",
+          id: 0987654344,
+          currency: "USD",
+          price: 3,
+          image: "https://ml-global.store/images/detailed/1/38.jpg",
+          title: "Martel cognac",
+          infoProduct: "A classic cognac made from selected spirits aged 8–12 years, with a mild taste and hints of wood and vanilla.",
+          weight: 50,
+          typeWeight: "milliliter"
       ),
       ElementMenu(
-        price: 12.4,
-        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
-        title: "Oyster Dish",
-      ),
-    ],
-  ),
-  CategoryMenu(
-    category: "Seafood",
-    items: [
-      ElementMenu(
-        price: 7.4,
-        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
-        title: "Oyster Dish",
+          id: 0987654344,
+          currency: "USD",
+          price: 3,
+          image: "https://whic.de/media/catalog/product/6/0/600522_10.jpg",
+          title: "Camus cognac",
+          infoProduct: "Camus VS Elegance is created from the best cognac spirits, which are aged in oak barrels for 3 to 5 years.",
+          weight: 50,
+          typeWeight: "milliliter"
       ),
       ElementMenu(
-        price: 9.0,
-        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
-        title: "Oyster On Ice",
+          id: 0987654344,
+          currency: "USD",
+          price: 3,
+          image: "https://catherineasquithgallery.com/uploads/posts/2021-02/1614370234_16-p-pivo-svetlii-fon-20.jpg",
+          title: "Light beer",
+          infoProduct: "Light wheat ale in the Bavarian style. Wheat malt makes it soft and enveloping, while a special strain of yeast adds hints of clove and banana to the aroma.",
+          weight: 500,
+          typeWeight: "milliliter"
       ),
       ElementMenu(
-        price: 8.5,
-        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
-        title: "Fried Rice on Pot",
-      ),
-    ],
-  ),
-  CategoryMenu(
-    category: "Appetizers",
-    items: [
-      ElementMenu(
-        price: 8.5,
-        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
-        title: "Dim SUm",
-      ),
-      ElementMenu(
-        price: 7.4,
-        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
-        title: "Cookie Sandwich",
-      ),
-      ElementMenu(
-        price: 9.0,
-        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
-        title: "Combo Sandwich",
-      ),
-      ElementMenu(
-        price: 12.4,
-        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
-        title: "Cookie Sandwich",
-      ),
-      ElementMenu(
-        price: 9.0,
-        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
-        title: "Chow Fun",
-      ),
-    ],
-  ),
-  CategoryMenu(
-    category: "Dim Sum",
-    items: [
-      ElementMenu(
-        price: 9.0,
-        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
-        title: "Combo Sandwich",
-      ),
-      ElementMenu(
-        price: 12.4,
-        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
-        title: "Cookie Sandwich",
-      ),
-      ElementMenu(
-        price: 8.5,
-        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
-        title: "Dim SUm",
-      ),
-      ElementMenu(
-        price: 7.4,
-        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
-        title: "Oyster Dish",
-      ),
-      ElementMenu(
-        price: 9.0,
-        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
-        title: "Oyster On Ice",
-      ),
-      ElementMenu(
-        price: 8.5,
-        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
-        title: "Fried Rice on Pot",
+          id: 0987654344,
+          currency: "USD",
+          price: 3,
+          image: "https://disgustingmen.com/wp-content/uploads/2018/11/craft_stout_17.jpg",
+          title: "Dark beer",
+          infoProduct: "Porter with a dense malt base, caramel sweetness and hints of chocolate and espresso on the palate.",
+          weight: 500,
+          typeWeight: "milliliter"
       ),
     ],
   ),

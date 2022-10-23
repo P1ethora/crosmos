@@ -42,10 +42,15 @@ class MenuCard extends StatelessWidget {
     required this.imageName,
     required this.title,
     required this.price,
+    required this.id,
+    required this.weight,
+    required this.typeWeight,
+    required this.currency,
+    required this.infoProduct,
   }) : super(key: key);
 
-  final String imageName, title;
-  final double price;
+  final String title, imageName, typeWeight, currency, infoProduct;
+  final double price, weight, id;
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +64,12 @@ class MenuCard extends StatelessWidget {
                 builder: (context) => ItemInfoPage(
                     title: title,
                     imageName: imageName,
-                    price: price
+                    price: price,
+                    id: id,
+                    weight: weight,
+                    typeWeight: typeWeight,
+                    currency: currency,
+                    infoProduct: infoProduct,
                 ),
               )
             )
