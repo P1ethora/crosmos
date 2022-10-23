@@ -11,7 +11,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class APIService {
   static const storage = FlutterSecureStorage();
-  static const String HOST = 'https://hot-bars-love-151-249-171-32.loca.lt';
+  static const String HOST = 'https://early-doors-agree-151-249-171-32.loca.lt';
 
   static Future<String> getToken() async {
     var value = await storage.read(key: 'token');
@@ -26,8 +26,15 @@ class APIService {
   }
 
   static Future<bool> login(LoginRequestModel request) async {
-    final response = await http.post(Uri.parse(
-        '$HOST/login?email=${request.email}&password=${request.password}'));
+    final response = await http.post(
+        Uri.parse(
+            '$HOST/login?email=${request.email}&password=${request.password}'),
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Credentials": "true",
+          "Access-Control-Allow-Headers": "Access-Control-Allow-Origin, Accept",
+        });
 
     final statusCode = response.statusCode;
     final json = response.body;
@@ -56,7 +63,13 @@ class APIService {
     }
     headers.putIfAbsent("Authorization", () => "Bearer $token");
 
-    final response = await http.get(Uri.parse('$HOST/user'), headers: headers);
+    final response = await http.get(Uri.parse('$HOST/user'), headers: {
+      "Authorization": "Bearer $token",
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Headers": "Access-Control-Allow-Origin, Accept",
+    });
     final statusCode = response.statusCode;
 
     if (statusCode != 200) {
@@ -78,9 +91,16 @@ class APIService {
 
   static Future<bool> registration(String firstName, String lastName,
       String email, String password, String url) async {
+    String bodyJson =
+        "{\"firstName\":\"$firstName\", \"lastName\":\"$lastName\", \"email\":\"$email\", \"password\":\"$password\", \"imgUrl\":\"$url\"}";
+    final response = await http
+        .post(Uri.parse('$HOST/registration'), body: bodyJson, headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": "true",
+      "Access-Control-Allow-Headers": "Access-Control-Allow-Origin, Accept"
+    });
 
-    String bodyJson = "{\"firstName\":\"$firstName\", \"lastName\":\"$lastName\", \"email\":\"$email\", \"password\":\"$password\", \"imgUrl\":\"$url\"}";
-    final response = await http.post(Uri.parse('$HOST/registration'), body: bodyJson, headers: {"Content-Type": "application/json"},);
     final statusCode = response.statusCode;
 
     if (statusCode != 200) {
@@ -101,11 +121,13 @@ class APIService {
   }
 
   static Future<bool> takePlace(String placeData) async {
-    Map<String, String> headers = HashMap();
-    headers.putIfAbsent("Authorization", () => "Bearer ${User.token}");
     final response = await http.post(Uri.parse('$HOST/place'),
-        headers: headers, body: placeData);
-
+        headers: {
+          "Authorization": "Bearer ${User.token}",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers": "Access-Control-Allow-Origin, Accept",
+        }, body: placeData);
     return true;
   }
 }

@@ -1,15 +1,15 @@
 // For demo
 
-class Menu {
+class ElementMenu {
   final String title, image;
   final double price;
 
-  Menu({required this.title, required this.image, required this.price});
+  ElementMenu({required this.title, required this.image, required this.price});
 }
 
 class CategoryMenu {
   final String category;
-  final List<Menu> items;
+  final List<ElementMenu> items;
 
   CategoryMenu({required this.category, required this.items});
 }
@@ -18,24 +18,24 @@ final List<CategoryMenu> demoCategoryMenus = [
   CategoryMenu(
     category: "Most Popular",
     items: [
-      Menu(
+      ElementMenu(
         price: 7.4,
-        image: "assets/images/f_0.png",
+        image: "cesar.jpg",
         title: "Cookie Sandwich",
       ),
-      Menu(
+      ElementMenu(
         price: 9.0,
-        image: "assets/images/f_1.png",
+        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
         title: "Chow Fun",
       ),
-      Menu(
+      ElementMenu(
         price: 8.5,
-        image: "assets/images/f_2.png",
+        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
         title: "Dim SUm",
       ),
-      Menu(
+      ElementMenu(
         price: 12.4,
-        image: "assets/images/f_3.png",
+        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
         title: "Cookie Sandwich",
       ),
     ],
@@ -43,24 +43,24 @@ final List<CategoryMenu> demoCategoryMenus = [
   CategoryMenu(
     category: "Beef & Lamb",
     items: [
-      Menu(
+      ElementMenu(
         price: 7.4,
-        image: "assets/images/f_4.png",
+        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
         title: "Combo Burger",
       ),
-      Menu(
+      ElementMenu(
         price: 9.0,
-        image: "assets/images/f_5.png",
+        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
         title: "Combo Sandwich",
       ),
-      Menu(
+      ElementMenu(
         price: 8.5,
-        image: "assets/images/f_2.png",
+        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
         title: "Dim SUm",
       ),
-      Menu(
+      ElementMenu(
         price: 12.4,
-        image: "assets/images/f_3.png",
+        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
         title: "Oyster Dish",
       ),
     ],
@@ -68,19 +68,19 @@ final List<CategoryMenu> demoCategoryMenus = [
   CategoryMenu(
     category: "Seafood",
     items: [
-      Menu(
+      ElementMenu(
         price: 7.4,
-        image: "assets/images/f_6.png",
+        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
         title: "Oyster Dish",
       ),
-      Menu(
+      ElementMenu(
         price: 9.0,
-        image: "assets/images/f_7.png",
+        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
         title: "Oyster On Ice",
       ),
-      Menu(
+      ElementMenu(
         price: 8.5,
-        image: "assets/images/f_8.png",
+        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
         title: "Fried Rice on Pot",
       ),
     ],
@@ -88,29 +88,29 @@ final List<CategoryMenu> demoCategoryMenus = [
   CategoryMenu(
     category: "Appetizers",
     items: [
-      Menu(
+      ElementMenu(
         price: 8.5,
-        image: "assets/images/f_2.png",
+        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
         title: "Dim SUm",
       ),
-      Menu(
+      ElementMenu(
         price: 7.4,
-        image: "assets/images/f_0.png",
+        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
         title: "Cookie Sandwich",
       ),
-      Menu(
+      ElementMenu(
         price: 9.0,
-        image: "assets/images/f_5.png",
+        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
         title: "Combo Sandwich",
       ),
-      Menu(
+      ElementMenu(
         price: 12.4,
-        image: "assets/images/f_3.png",
+        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
         title: "Cookie Sandwich",
       ),
-      Menu(
+      ElementMenu(
         price: 9.0,
-        image: "assets/images/f_1.png",
+        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
         title: "Chow Fun",
       ),
     ],
@@ -118,34 +118,34 @@ final List<CategoryMenu> demoCategoryMenus = [
   CategoryMenu(
     category: "Dim Sum",
     items: [
-      Menu(
+      ElementMenu(
         price: 9.0,
-        image: "assets/images/f_5.png",
+        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
         title: "Combo Sandwich",
       ),
-      Menu(
+      ElementMenu(
         price: 12.4,
-        image: "assets/images/f_3.png",
+        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
         title: "Cookie Sandwich",
       ),
-      Menu(
+      ElementMenu(
         price: 8.5,
-        image: "assets/images/f_2.png",
+        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
         title: "Dim SUm",
       ),
-      Menu(
+      ElementMenu(
         price: 7.4,
-        image: "assets/images/f_6.png",
+        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
         title: "Oyster Dish",
       ),
-      Menu(
+      ElementMenu(
         price: 9.0,
-        image: "assets/images/f_7.png",
+        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
         title: "Oyster On Ice",
       ),
-      Menu(
+      ElementMenu(
         price: 8.5,
-        image: "assets/images/f_8.png",
+        image: "https://yandex.by/images/search?text=%D0%A1%D0%B0%D0%BB%D0%B0%D1%82%20%D1%81%20%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D0%B5%D0%BC%20%D0%B8%20%D0%B0%D0%B2%D0%BE%D0%BA%D0%B0%D0%B4%D0%BE&source=related-duck&lr=155&pos=19&img_url=http%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2021-04%2F1617265104_14-p-salat-s-semgoi-slabosolenoi-krasivo-17.jpg&rpt=simage",
         title: "Fried Rice on Pot",
       ),
     ],

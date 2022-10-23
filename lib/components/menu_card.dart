@@ -2,6 +2,8 @@ import 'package:crosmos/page/Inf_page/ItemInfo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../api/api_service.dart';
+
 class MenuCategoryItem extends StatelessWidget {
   const MenuCategoryItem({
     Key? key,
@@ -37,12 +39,12 @@ class MenuCategoryItem extends StatelessWidget {
 class MenuCard extends StatelessWidget {
   const MenuCard({
     Key? key,
-    required this.image,
+    required this.imageName,
     required this.title,
     required this.price,
   }) : super(key: key);
 
-  final String image, title;
+  final String imageName, title;
   final double price;
 
   @override
@@ -56,7 +58,7 @@ class MenuCard extends StatelessWidget {
               MaterialPageRoute(
                 builder: (context) => ItemInfoPage(
                     title: title,
-                    image: image,
+                    imageName: imageName,
                     price: price
                 ),
               )
@@ -67,7 +69,7 @@ class MenuCard extends StatelessWidget {
             fixedSize: const Size(100, 100),
             padding: const EdgeInsets.all(0)
           ),
-          child: Image.network(image),
+          child: Image.network("${APIService.HOST}/image/$imageName"),
         ),
         const SizedBox(width: 16),
         Expanded(

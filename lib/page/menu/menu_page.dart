@@ -113,14 +113,14 @@ class _MenuPageState extends State<MenuPage> {
             sliver: SliverList(
               delegate: SliverChildBuilderDelegate(
                 (context, categoryIndex) {
-                  List<Menu> items = demoCategoryMenus[categoryIndex].items;
+                  List<ElementMenu> items = demoCategoryMenus[categoryIndex].items;
                   return MenuCategoryItem(
                     title: demoCategoryMenus[categoryIndex].category,
                     items: List.generate(
                         items.length,
                             (index) => MenuCard(
                           title: items[index].title,
-                          image: items[index].image,
+                          imageName: items[index].image,
                           price: items[index].price,
                         )
                     ),

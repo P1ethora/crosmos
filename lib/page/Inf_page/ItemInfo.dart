@@ -1,14 +1,15 @@
+import 'package:crosmos/api/api_service.dart';
 import 'package:flutter/material.dart';
 
 class ItemInfoPage extends StatelessWidget {
   const ItemInfoPage({
     Key? key,
-    required this.image,
+    required this.imageName,
     required this.title,
     required this.price,
   }) : super(key: key);
 
-  final String image, title;
+  final String imageName, title;
   final double price;
 
   @override
@@ -25,7 +26,7 @@ class ItemInfoPage extends StatelessWidget {
           // SizedBox(height: 20),
             Container(
               height: 400,
-              child: Image.asset(image, fit: BoxFit.fill,),
+              child: Image.network("${APIService.HOST}/image/$imageName", fit: BoxFit.fill,),
             ),
             SizedBox(height: 20),
             Text("\$ $price",
