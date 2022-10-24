@@ -168,10 +168,14 @@ class _HomePageState extends State<HomePage> {
 
     //бэк запрос с result и id пользователя
     //если приходит хороший ответ переводим на страницу точки
-    String value = "{\"identifier\": \"1\",\"value\": \"TlXIjsswkrSFVHtC1eBRJg==\"}";
-
-    // APIService.takePlace(value);
-    Navigator.of(context).pushNamed('/point-trade');
+    String value = "{\"identifier\": \"7ac17680-297e-4179-8147-0edfdeb14732\",\"value\": \"TlXIjsswkrSFVHtC1eBRJg==\"}";
+    APIService.takePlace(value)
+    .then((value) =>
+    {
+      if(value) {
+        Navigator.of(context).pushNamed('/point-trade')
+      }
+    });
   }
 
   //в nfc все тоже самое что и в scanQr, также нужно обрезать ответ nfc, в начало крепяться левый символы

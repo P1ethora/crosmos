@@ -1,8 +1,10 @@
+import 'package:crosmos/api/api_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 
 import '../../model/point/story_data.dart';
+import '../../shared/user.dart';
 
 class PointTradePage extends StatefulWidget {
   @override
@@ -20,10 +22,8 @@ class _PointTradePageState extends State<PointTradePage> {
   }
 
   addItems() {
-    items.add("One");
-    items.add("Two");
-    items.add("Three");
-    items.add("Four");
+    items.add("Order one");
+    items.add("Order two");
   }
 
   Widget showList() {
@@ -103,7 +103,7 @@ class _PointTradePageState extends State<PointTradePage> {
                 Icons.balance_rounded,
                 size: 15,
               ),
-              Text(' Goracio:4')
+              Text(' Omlet-H:1')
             ],
           ),
           automaticallyImplyLeading: false,
@@ -111,8 +111,10 @@ class _PointTradePageState extends State<PointTradePage> {
             //К СТРЕЛКЕ В СЛУЧАЕ ПОСТУПЛЕНИЯ ЗАКАЗА НА КУХНЮ КРЕПИТЬ $ (оплатить и выйти)
             icon: Icon(Icons.arrow_back_rounded),
             onPressed: () {
+              APIService.outFromPlace().then((value) => {
+                    if (value) {Navigator.pop(context)}
+                  }); //ВОЗВРАТ НА ТОЧКУ ТОРГОВЛИ
               //ПРИ ПОПАДАНИИ ЗАКАЗА НА КУХНЮ ДОЛЖНО ПОЯВИТСЯ ОКНО ПРИ НАЖАТИИ ОБ ОПЛАТЕ
-              Navigator.pop(context); //ВОЗВРАТ НА ТОЧКУ ТОРГОВЛИ
             },
             color: Colors.white,
           ),
@@ -169,11 +171,11 @@ class _Stories extends StatelessWidget {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: SizedBox(
-                        width: 50,
+                        width: 70,
                         child: _StoryCard(
                           storyData: StoryData(
-                            name: 'Борька Харитонов',
-                            url: 'assets/images/profile.png',
+                            name: "${User.firstName} ${User.lastName}",
+                            url: User.imageUrl,
                           ),
                         ),
                       ),
@@ -208,7 +210,7 @@ class _StoryCard extends StatelessWidget {
           height: 60,
           decoration: BoxDecoration(
               shape: BoxShape.circle,
-              image: DecorationImage(image: AssetImage(storyData.url))),
+              image: DecorationImage(image: NetworkImage(storyData.url))),
         ),
         Expanded(
           child: Padding(

@@ -25,6 +25,30 @@ class APIService {
     await storage.write(key: 'token', value: null);
   }
 
+  static Future<bool> outFromPlace() async {
+    String token = await APIService.getToken();
+    final response = await http.post(
+        Uri.parse(
+            '$HOST/trade/point-out'),
+        headers: {
+          "Authorization": "Bearer $token",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Credentials": "true",
+          "Access-Control-Allow-Headers": "Access-Control-Allow-Origin, Accept",
+        });
+
+    final statusCode = response.statusCode;
+    final json = response.body;
+
+    if(statusCode != 200) {
+      return false;
+    }
+
+    return true;
+
+  }
+
   static Future<bool> login(LoginRequestModel request) async {
     final response = await http.post(
         Uri.parse(
@@ -121,13 +145,33 @@ class APIService {
   }
 
   static Future<bool> takePlace(String placeData) async {
-    final response = await http.post(Uri.parse('$HOST/place'),
+    String token = await APIService.getToken();
+    final response = await http.post(Uri.parse('$HOST/trade/place'),
         headers: {
-          "Authorization": "Bearer ${User.token}",
+          "Authorization": "Bearer $token",
           "Content-Type": "application/json",
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Headers": "Access-Control-Allow-Origin, Accept",
         }, body: placeData);
+    final statusCode = response.statusCode;
+
+    if (statusCode != 200) {
+      return false;
+    }
+
+    final json = response.body;
+    final parsedJson = jsonDecode(json);
+
+    // private User.OfflineActivity offlineActivity;
+    // private String allSum;
+    // private String currency;
+    //
+    // User.identifier = parsedJson['identifier'];
+    // User.firstName = parsedJson['firstName'];
+    // User.lastName = parsedJson['lastName'];
+    // User.email = parsedJson['email'];
+    // User.imageUrl = parsedJson['img'];
+
     return true;
   }
 }
