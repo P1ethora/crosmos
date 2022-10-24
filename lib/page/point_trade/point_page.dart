@@ -93,7 +93,7 @@ class _PointTradePageState extends State<PointTradePage> {
         floatingActionButton: FloatingActionButton(
           onPressed: () => Navigator.of(context).pushNamed('/menu'),
           //ПЕРЕХОД В МЕНЮ
-          child: Text("Меню"),
+          child: Text("Menu"),
         ),
         appBar: AppBar(
           backgroundColor: Color.fromRGBO(67, 80, 159, 1),
@@ -122,7 +122,7 @@ class _PointTradePageState extends State<PointTradePage> {
               child: Container(
                 alignment: Alignment.center,
                 width: 120.0,
-                child: Text("сумма: \$100"),
+                child: Text("sum: \$100"),
               ),
             )),
             InkWell(

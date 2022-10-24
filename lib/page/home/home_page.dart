@@ -102,12 +102,12 @@ class _HomePageState extends State<HomePage> {
       padding: EdgeInsets.only(top: 15),
       child: Column(
         children: [
-          menuItem(1, "Карты", Icons.credit_card, "/home"),
-          menuItem(2, "Подписки", Icons.donut_large, "/home"),
-          menuItem(3, "История", Icons.history, "/home"),
+          menuItem(1, "Cards", Icons.credit_card, "/home"),
+          menuItem(2, "Subscriptions", Icons.donut_large, "/home"),
+          menuItem(3, "Story", Icons.history, "/home"),
           Divider(),
-          menuItem(4, "Настройки", Icons.settings, "/home"),
-          menuItem(5, "Выйти", Icons.logout, "/login")
+          menuItem(4, "Settings", Icons.settings, "/home"),
+          menuItem(5, "Go out", Icons.logout, "/login")
         ],
       ),
     );
